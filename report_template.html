@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Research Companies in {{ current_year }}</title>
+    </head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 0 auto;
+        }
+        table tr td {
+            padding: 1% 2%;
+            border: 2px solid;
+        }
+    </style>
+    <body>
+        <h1 style="text-align: center">FinTech Companies in Seattle</h1>
+        <div>
+            <table>
+                <tr>
+                    {% for column in table['columns'] %}
+                    <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in table['data'] %}
+                <tr>
+                    {% for col in row %}
+                    <td>{{ col }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
